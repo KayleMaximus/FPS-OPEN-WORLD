@@ -32,9 +32,15 @@ public class EnemyAttack : MonoBehaviour
     private void AttackHitEvent()
     {
         if (_playerHealth != null) {
-            if(_distanceToTarget <= _navMeshAgent.stoppingDistance + 1.5)
+            if(transform.tag == "Zombie" && _distanceToTarget <= _navMeshAgent.stoppingDistance)
             {
-                Debug.Log("Gotchu!");
+                Debug.Log("Gotchu! By Zombie");
+                _playerHealth.Damage(_damage);
+                _playerHealth.GetComponent<DisplayDamage>().ShowDamageImpact();
+            }
+            if(transform.tag == "Titan" && _distanceToTarget <= _navMeshAgent.stoppingDistance + 1.5)
+            {
+                Debug.Log("Gotchu! By Titan");
                 _playerHealth.Damage(_damage);
                 _playerHealth.GetComponent<DisplayDamage>().ShowDamageImpact();
             }
