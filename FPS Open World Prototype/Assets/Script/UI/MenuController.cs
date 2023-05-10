@@ -6,6 +6,8 @@ using TMPro;
 public class MenuController : MonoBehaviour
 {
     #region Declaration
+    [SerializeField] private SceneLoader _sceneLoader;
+
     [Header("Volume Setting")]
     [SerializeField] private TMP_Text _volumeTextValue = null;
     [SerializeField] private Slider _volumeSlider = null;
@@ -48,6 +50,13 @@ public class MenuController : MonoBehaviour
     private void Start()
     {
         GetResolutions();
+
+        _sceneLoader = GameObject.Find("LevelLoader").GetComponent<SceneLoader>();
+
+        if(_sceneLoader == null)
+        {
+            Debug.LogError("SceneLoader on MenuController is null!");
+        }
     }
 
     #region Graphics Setting
@@ -198,5 +207,10 @@ public class MenuController : MonoBehaviour
             GraphicsApply();
         }
 
+    }
+
+    public void LoadNextLevel()
+    {
+        _sceneLoader.LoadNextLevel();
     }
 }
