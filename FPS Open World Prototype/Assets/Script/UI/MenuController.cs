@@ -127,11 +127,11 @@ public class MenuController : MonoBehaviour
     {
         if (_invertYToggle.isOn)
         {
-            PlayerPrefs.SetFloat("masterInvertY", 1);
+            PlayerPrefs.SetInt("masterInvertY", 1);
         }
         else 
         {
-            PlayerPrefs.SetFloat("masterInvertY", 0);
+            PlayerPrefs.SetInt("masterInvertY", 0);
         }
 
         PlayerPrefs.SetFloat("masterSen", _mainControllerSen);

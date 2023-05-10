@@ -2735,7 +2735,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &475878403
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5723,6 +5723,66 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
+--- !u!1 &1012178259
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1012178260}
+  - component: {fileID: 1012178261}
+  m_Layer: 5
+  m_Name: LoadPrefs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1012178260
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012178259}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1836209498}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1012178261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012178259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff2f414e2cf0a745b1f791337291352, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canUse: 1
+  _menuController: {fileID: 1836209499}
+  _volumeTextValue: {fileID: 2085223691}
+  _volumeSlider: {fileID: 974633692}
+  _brightnessSlider: {fileID: 1413304123}
+  _brightnessTextValue: {fileID: 1114908919}
+  _qualityDropdown: {fileID: 475785583}
+  _fullscreenToggle: {fileID: 2032964624}
+  _controllerSenTextValue: {fileID: 1161922507}
+  _controllerSenSlider: {fileID: 824766661}
+  _invertToggle: {fileID: 164349708}
 --- !u!1 &1055292104
 GameObject:
   m_ObjectHideFlags: 0
@@ -10040,6 +10100,7 @@ RectTransform:
   - {fileID: 113612673}
   - {fileID: 1151105224}
   - {fileID: 1178478023}
+  - {fileID: 1012178260}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
