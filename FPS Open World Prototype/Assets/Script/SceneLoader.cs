@@ -10,6 +10,14 @@ public class SceneLoader : MonoBehaviour
 
     public float _transitionTime = 1f;
 
+    private void Update()
+    {
+        if(SceneManager.GetActiveScene().name == "Lobby" && Input.GetKeyDown(KeyCode.Escape))
+        {
+            LoadSelectedLevel("MainMenu");
+        }
+    }
+
     public void PlayGain()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -18,6 +26,11 @@ public class SceneLoader : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void BackToLobby()
+    {
+        LoadSelectedLevel("Lobby");
     }
 
     public void LoadNextLevel()
@@ -33,5 +46,20 @@ public class SceneLoader : MonoBehaviour
         yield return new WaitForSeconds(_transitionTime);
         //loadscene
         SceneManager.LoadScene(levelIndex);
+    }  
+    
+    IEnumerator LoadSelectLevel(string levelName)
+    {
+        //play animation
+        _transition.SetTrigger("Start");
+        //wait
+        yield return new WaitForSeconds(_transitionTime);
+        //loadscene
+        SceneManager.LoadScene(levelName);
+    }
+
+    public void LoadSelectedLevel(string levelName)
+    {
+        StartCoroutine(LoadSelectLevel(levelName));
     }
 }
