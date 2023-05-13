@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Audio;
 public class MenuController : MonoBehaviour
 {
     #region Declaration
     [SerializeField] private SceneLoader _sceneLoader;
 
     [Header("Volume Setting")]
+    [SerializeField] private AudioMixer _audioMixer;
     [SerializeField] private TMP_Text _volumeTextValue = null;
     [SerializeField] private Slider _volumeSlider = null;
-    [SerializeField] private float _defaultVolume = 1.0f;
+    [SerializeField] private float _defaultVolume = -40f;
 
     [Header("Gameplay Settings")]
     [SerializeField] private TMP_Text _controllerSenTextValue = null;
@@ -152,13 +154,15 @@ public class MenuController : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        AudioListener.volume = volume;
+        _audioMixer.SetFloat("MasterVolume", volume);
         _volumeTextValue.text = volume.ToString("0.0");
     }
-
+    
     public void VolumeApply()
     {
-        PlayerPrefs.SetFloat("masterVolume",(float)AudioListener.volume);
+        float volume;
+        _audioMixer.GetFloat("MasterVolume", out volume);
+        PlayerPrefs.SetFloat("masterVolume", volume);
         StartCoroutine(ConfirmationBox());
     }
 
@@ -174,7 +178,7 @@ public class MenuController : MonoBehaviour
     {
         if (MenuType == "Audio")
         {
-            AudioListener.volume = _defaultVolume;
+            _audioMixer.SetFloat("MasterVolume", _defaultVolume);
             _volumeSlider.value = _defaultVolume;
             _volumeTextValue.text = _defaultVolume.ToString("0.0");
             VolumeApply();

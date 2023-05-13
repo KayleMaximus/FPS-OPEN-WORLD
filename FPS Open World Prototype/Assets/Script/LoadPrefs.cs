@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class LoadPrefs : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class LoadPrefs : MonoBehaviour
     [SerializeField] private MenuController _menuController;
 
     [Header("Volume Setting")]
+    [SerializeField] private AudioMixer _audioMixer;
     [SerializeField] private TMP_Text _volumeTextValue = null;
     [SerializeField] private Slider _volumeSlider = null;
 
@@ -41,7 +43,7 @@ public class LoadPrefs : MonoBehaviour
 
                 _volumeTextValue.text = localVolume.ToString("0.0");
                 _volumeSlider.value = localVolume;
-                AudioListener.volume = localVolume;
+                _audioMixer.SetFloat("MasterVolume", localVolume);
             }
             else
             {
