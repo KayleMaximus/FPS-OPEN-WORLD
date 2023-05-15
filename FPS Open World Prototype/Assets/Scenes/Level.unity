@@ -4065,8 +4065,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5452426471296925525, guid: 7634e9d11c2e8ae4d898c06887be4df0, type: 3}
+      propertyPath: _Scenetransition
+      value: 
+      objectReference: {fileID: 500169385}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7634e9d11c2e8ae4d898c06887be4df0, type: 3}
+--- !u!95 &500169385 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9002047833627605428, guid: 7634e9d11c2e8ae4d898c06887be4df0, type: 3}
+  m_PrefabInstance: {fileID: 500169384}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &504240463 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5452426471296925525, guid: 7634e9d11c2e8ae4d898c06887be4df0, type: 3}

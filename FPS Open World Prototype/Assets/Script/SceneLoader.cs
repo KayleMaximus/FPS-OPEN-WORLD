@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     [SerializeField]
-    private Animator _transition = null;
+    private Animator _Scenetransition = null;
 
     public float _transitionTime = 1f;
 
     private void Update()
     {
-        if(SceneManager.GetActiveScene().name == "Lobby" && Input.GetKeyDown(KeyCode.Escape))
+        if (SceneManager.GetActiveScene().name == "Lobby" && Input.GetKeyDown(KeyCode.Escape))
         {
             LoadSelectedLevel("MainMenu");
         }
@@ -41,17 +41,17 @@ public class SceneLoader : MonoBehaviour
     IEnumerator LoadLevel(int levelIndex)
     {
         //play animation
-        _transition.SetTrigger("Start");
+        _Scenetransition.SetTrigger("Start");
         //wait
         yield return new WaitForSeconds(_transitionTime);
         //loadscene
         SceneManager.LoadScene(levelIndex);
-    }  
-    
+    }
+
     IEnumerator LoadSelectLevel(string levelName)
     {
         //play animation
-        _transition.SetTrigger("Start");
+        _Scenetransition.SetTrigger("Start");
         //wait
         yield return new WaitForSeconds(_transitionTime);
         //loadscene
@@ -62,4 +62,5 @@ public class SceneLoader : MonoBehaviour
     {
         StartCoroutine(LoadSelectLevel(levelName));
     }
+
 }

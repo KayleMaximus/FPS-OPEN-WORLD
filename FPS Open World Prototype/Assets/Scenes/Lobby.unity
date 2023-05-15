@@ -1199,6 +1199,10 @@ PrefabInstance:
       propertyPath: m_Alpha
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5452426471296925525, guid: 7634e9d11c2e8ae4d898c06887be4df0, type: 3}
+      propertyPath: _Scenetransition
+      value: 
+      objectReference: {fileID: 480547207}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7634e9d11c2e8ae4d898c06887be4df0, type: 3}
 --- !u!114 &480547206 stripped
@@ -1212,6 +1216,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb361da634523e244922832dea4a7d0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &480547207 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9002047833627605428, guid: 7634e9d11c2e8ae4d898c06887be4df0, type: 3}
+  m_PrefabInstance: {fileID: 480547205}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &491286390
 GameObject:
   m_ObjectHideFlags: 0
