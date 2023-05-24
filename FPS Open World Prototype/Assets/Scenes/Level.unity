@@ -196,6 +196,10 @@ PrefabInstance:
       propertyPath: _chaseRange
       value: 10.71
       objectReference: {fileID: 0}
+    - target: {fileID: 3225147997589944261, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
+      propertyPath: _ammo
+      value: 
+      objectReference: {fileID: 5843671866975638083, guid: 9c2e929fac8c9234b828a98474493a50, type: 3}
     - target: {fileID: 4607795055276876431, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
       propertyPath: m_Controller
       value: 
@@ -489,7 +493,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 555415867, guid: 18b5d242567882846a53d367c2fa6240, type: 3}
       propertyPath: _hitPoints
-      value: 200
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 6482708469026082368, guid: 18b5d242567882846a53d367c2fa6240, type: 3}
       propertyPath: m_RootOrder
@@ -3754,6 +3758,10 @@ PrefabInstance:
       propertyPath: _chaseRange
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3225147997589944261, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
+      propertyPath: _ammo
+      value: 
+      objectReference: {fileID: 5843671866975638083, guid: 9c2e929fac8c9234b828a98474493a50, type: 3}
     - target: {fileID: 4607795055276876431, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
       propertyPath: m_Controller
       value: 
@@ -3853,6 +3861,10 @@ PrefabInstance:
       propertyPath: _chaseRange
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3225147997589944261, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
+      propertyPath: _ammo
+      value: 
+      objectReference: {fileID: 5843671866975638083, guid: 9c2e929fac8c9234b828a98474493a50, type: 3}
     - target: {fileID: 4607795055276876431, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
       propertyPath: m_Controller
       value: 
@@ -3922,6 +3934,10 @@ PrefabInstance:
       propertyPath: _chaseRange
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3225147997589944261, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
+      propertyPath: _ammo
+      value: 
+      objectReference: {fileID: 5843671866975638083, guid: 9c2e929fac8c9234b828a98474493a50, type: 3}
     - target: {fileID: 4607795055276876431, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
       propertyPath: m_Controller
       value: 
@@ -3996,6 +4012,10 @@ PrefabInstance:
       propertyPath: _chaseRange
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3225147997589944261, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
+      propertyPath: _ammo
+      value: 
+      objectReference: {fileID: 5843671866975638083, guid: 9c2e929fac8c9234b828a98474493a50, type: 3}
     - target: {fileID: 4607795055276876431, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
       propertyPath: m_Controller
       value: 
@@ -4406,6 +4426,10 @@ PrefabInstance:
       propertyPath: _chaseRange
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3225147997589944261, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
+      propertyPath: _ammo
+      value: 
+      objectReference: {fileID: 5843671866975638083, guid: 9c2e929fac8c9234b828a98474493a50, type: 3}
     - target: {fileID: 4607795055276876431, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
       propertyPath: m_Controller
       value: 
@@ -4471,7 +4495,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 555415867, guid: 18b5d242567882846a53d367c2fa6240, type: 3}
       propertyPath: _hitPoints
-      value: 200
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 6482708469026082368, guid: 18b5d242567882846a53d367c2fa6240, type: 3}
       propertyPath: m_RootOrder
@@ -4541,7 +4565,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 555415867, guid: 18b5d242567882846a53d367c2fa6240, type: 3}
       propertyPath: _hitPoints
-      value: 200
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 6482708469026082368, guid: 18b5d242567882846a53d367c2fa6240, type: 3}
       propertyPath: m_RootOrder
@@ -4669,6 +4693,10 @@ PrefabInstance:
       propertyPath: _chaseRange
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3225147997589944261, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
+      propertyPath: _ammo
+      value: 
+      objectReference: {fileID: 5843671866975638083, guid: 9c2e929fac8c9234b828a98474493a50, type: 3}
     - target: {fileID: 4607795055276876431, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
       propertyPath: m_Controller
       value: 
@@ -5019,6 +5047,10 @@ PrefabInstance:
       propertyPath: _chaseRange
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3225147997589944261, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
+      propertyPath: _ammo
+      value: 
+      objectReference: {fileID: 5843671866975638083, guid: 9c2e929fac8c9234b828a98474493a50, type: 3}
     - target: {fileID: 4607795055276876431, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
       propertyPath: m_Controller
       value: 
@@ -5145,7 +5177,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 555415867, guid: 18b5d242567882846a53d367c2fa6240, type: 3}
       propertyPath: _hitPoints
-      value: 200
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 6482708469026082368, guid: 18b5d242567882846a53d367c2fa6240, type: 3}
       propertyPath: m_RootOrder
@@ -5273,6 +5305,10 @@ PrefabInstance:
       propertyPath: _chaseRange
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3225147997589944261, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
+      propertyPath: _ammo
+      value: 
+      objectReference: {fileID: 5843671866975638083, guid: 9c2e929fac8c9234b828a98474493a50, type: 3}
     - target: {fileID: 4607795055276876431, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
       propertyPath: m_Controller
       value: 
@@ -5521,6 +5557,10 @@ PrefabInstance:
       propertyPath: _chaseRange
       value: 9.62
       objectReference: {fileID: 0}
+    - target: {fileID: 3225147997589944261, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
+      propertyPath: _ammo
+      value: 
+      objectReference: {fileID: 5843671866975638083, guid: 9c2e929fac8c9234b828a98474493a50, type: 3}
     - target: {fileID: 4607795055276876431, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
       propertyPath: m_Controller
       value: 
@@ -5590,6 +5630,10 @@ PrefabInstance:
       propertyPath: _chaseRange
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3225147997589944261, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
+      propertyPath: _ammo
+      value: 
+      objectReference: {fileID: 5843671866975638083, guid: 9c2e929fac8c9234b828a98474493a50, type: 3}
     - target: {fileID: 4607795055276876431, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
       propertyPath: m_Controller
       value: 
@@ -5706,7 +5750,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 555415867, guid: 18b5d242567882846a53d367c2fa6240, type: 3}
       propertyPath: _hitPoints
-      value: 200
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 6482708469026082368, guid: 18b5d242567882846a53d367c2fa6240, type: 3}
       propertyPath: m_RootOrder
@@ -5855,6 +5899,10 @@ PrefabInstance:
       propertyPath: _chaseRange
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3225147997589944261, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
+      propertyPath: _ammo
+      value: 
+      objectReference: {fileID: 5843671866975638083, guid: 9c2e929fac8c9234b828a98474493a50, type: 3}
     - target: {fileID: 4607795055276876431, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
       propertyPath: m_Controller
       value: 
@@ -5969,6 +6017,10 @@ PrefabInstance:
       propertyPath: _chaseRange
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3225147997589944261, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
+      propertyPath: _ammo
+      value: 
+      objectReference: {fileID: 5843671866975638083, guid: 9c2e929fac8c9234b828a98474493a50, type: 3}
     - target: {fileID: 4607795055276876431, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
       propertyPath: m_Controller
       value: 
@@ -6355,6 +6407,10 @@ PrefabInstance:
       propertyPath: _chaseRange
       value: 9.62
       objectReference: {fileID: 0}
+    - target: {fileID: 3225147997589944261, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
+      propertyPath: _ammo
+      value: 
+      objectReference: {fileID: 5843671866975638083, guid: 9c2e929fac8c9234b828a98474493a50, type: 3}
     - target: {fileID: 4607795055276876431, guid: bec5e86d5edf31c4980ac68ae9c8030c, type: 3}
       propertyPath: m_Controller
       value: 

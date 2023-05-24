@@ -9,6 +9,8 @@ public class EnemyHealth : MonoBehaviour
     Animator _animator;
     bool _isdead = false;
 
+    [SerializeField] GameObject _ammo;
+
     public bool IsDead()
     {
         return _isdead;
@@ -33,6 +35,8 @@ public class EnemyHealth : MonoBehaviour
     {
         if (_isdead) return;
         _isdead = true;
+        Instantiate(_ammo, transform.position, Quaternion.identity);
         _animator.SetTrigger("die");
+
     }
 }
