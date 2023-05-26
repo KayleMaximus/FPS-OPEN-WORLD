@@ -27,12 +27,11 @@ public class ShopLoad : MonoBehaviour
             {
                 var shopItem = Instantiate(_itemPrefab, new Vector3(), Quaternion.identity);
                 shopItem.transform.SetParent(_content.transform);
-                shopItem.GetComponent<ItemRow>().name = item[1];
+                shopItem.GetComponent<ItemRow>().itemName = item[1];
                 shopItem.GetComponent<ItemRow>().price = item[2];
                 shopItem.GetComponent<ItemRow>().amount = item[3];
                 shopItem.GetComponent<ItemRow>().url = item[4];
                 shopItem.GetComponent<ItemRow>().AssignValue();
-
             }
         }
         else
