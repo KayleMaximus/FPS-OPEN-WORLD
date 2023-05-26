@@ -37,7 +37,7 @@ public class EnemyHealth : MonoBehaviour
         _isdead = true;
         _animator.SetTrigger("die");
      
-        GameObject.Find("Pickups").GetComponent<AmmoFactory>().CreateRandomAmmo(transform.position);
+        GameObject.Find("AmmoFactory").GetComponent<AmmoFactory>().CreateRandomAmmo(transform.position);
 
     }
 }
