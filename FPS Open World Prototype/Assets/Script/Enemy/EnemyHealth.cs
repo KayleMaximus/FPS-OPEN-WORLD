@@ -35,8 +35,9 @@ public class EnemyHealth : MonoBehaviour
     {
         if (_isdead) return;
         _isdead = true;
-        Instantiate(_ammo, transform.position, Quaternion.identity);
         _animator.SetTrigger("die");
+     
+        GameObject.Find("Pickups").GetComponent<AmmoFactory>().CreateRandomAmmo(transform.position);
 
     }
 }
