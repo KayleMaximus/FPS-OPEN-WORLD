@@ -5,29 +5,37 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using System;
+using SimpleJSON;
+using UnityEditor.Rendering.LookDev;
 
 public class ItemRow : MonoBehaviour
 {
-    [SerializeField] 
+    [SerializeField]
     private TMP_Text _name, _amount, _price, _quantity;
     [SerializeField]
     public Image thisRenderer;
     [SerializeField]
     public string _url;
 
+    //Attribute
     public string itemName, amount, price, url;
+    public int id;
 
     public double _total;
 
-    UIManager _uiManager;
+    ShopLoad _shopLoad;
+
+    InventoryLoad _inventoryLoad;
+
+    #region logic for shoping
 
     private void Start()
     {
-        _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+        _shopLoad = FindObjectOfType<ShopLoad>();
 
-        if ( _uiManager == null )
+        if (_shopLoad == null)
         {
-            Debug.LogError("The UI Manager is NULL.");
+            Debug.LogError("The Shop Load is NULL.");
         }
     }
     public void AssignValue()
@@ -43,9 +51,7 @@ public class ItemRow : MonoBehaviour
     {
         WWW wwwLoader = new WWW(_url);
         yield return wwwLoader;
-
         thisRenderer.sprite = Sprite.Create(wwwLoader.texture, new Rect(0, 0, wwwLoader.texture.width, wwwLoader.texture.height), Vector2.one / 2);
-       // thisRenderer.sprite = Sprite.Create(wwwLoader.texture, new Rect(0, 0, 0.5f,0.5f), Vector2.one /2);
     }
 
     public void Add()
@@ -55,8 +61,8 @@ public class ItemRow : MonoBehaviour
             return;
         }
         _quantity.text = (Int32.Parse(_quantity.text) + 1).ToString();
-        _total += 1000f;
-        _uiManager.UpdateTotalMoney(_total);
+        _total = Int32.Parse(price);
+        _shopLoad.UpdateTotalMoney(_total);
     }
 
     public void Minus()
@@ -66,7 +72,73 @@ public class ItemRow : MonoBehaviour
             return;
         }
         _quantity.text = (Int32.Parse(_quantity.text) - 1).ToString();
-        _total -= 1000f;
-        _uiManager.UpdateTotalMoney(_total);
+        _total = -Int32.Parse(price);
+        _shopLoad.UpdateTotalMoney(_total);
     }
+
+    public void ReduceAmountAfterBuy()
+    {
+        if (Int32.Parse(_quantity.text) != 0)
+        {
+            int amount = (Int32.Parse(_amount.text) - Int32.Parse(_quantity.text));
+            _amount.text = amount.ToString();
+            _quantity.text = "0";
+            StartCoroutine(UpdateItem(id, amount));
+        }
+
+    }
+
+    IEnumerator UpdateItem(int itemId, int amount)
+    {
+        WWWForm updateItemsForm = new WWWForm();
+        updateItemsForm.AddField("id", itemId);
+        updateItemsForm.AddField("amount", amount);
+        UnityWebRequest updateItemsRequest = UnityWebRequest.Post("http://localhost/shop/updateAmount.php", updateItemsForm);
+        yield return updateItemsRequest.SendWebRequest();
+        if (updateItemsRequest.error == null)
+        {
+            Debug.Log("Updated!");
+            Debug.Log(updateItemsRequest.downloadHandler.text);
+        }
+        else
+        {
+            Debug.Log(updateItemsRequest.error);
+        }
+    }
+
+    #endregion
+
+    #region Logic for inventory
+
+    public void InsertItemToInventory(int itemId, string itemName, int price, string url)
+    {
+        int amount = Int32.Parse(_quantity.text);
+        if (Int32.Parse(_quantity.text) != 0)
+        {
+            StartCoroutine(InsertItem(itemId,itemName,price,amount,url));
+        }
+    }
+
+    IEnumerator InsertItem(int itemId, string itemName, int price , int amount, string url)
+    {
+        WWWForm InsertItemsForm = new WWWForm();
+        InsertItemsForm.AddField("id", itemId);
+        InsertItemsForm.AddField("name", itemName);
+        InsertItemsForm.AddField("price", price);
+        InsertItemsForm.AddField("amount", amount);
+        InsertItemsForm.AddField("url", url);
+        UnityWebRequest InsertItemsRequest = UnityWebRequest.Post("http://localhost/inventory/insertItem.php", InsertItemsForm);
+        yield return InsertItemsRequest.SendWebRequest();
+        if (InsertItemsRequest.error == null)
+        {
+            Debug.Log("Inserted!");
+            Debug.Log(InsertItemsRequest.downloadHandler.text);
+        }
+        else
+        {
+            Debug.Log(InsertItemsRequest.error);
+        }
+    }
+
+    #endregion
 }

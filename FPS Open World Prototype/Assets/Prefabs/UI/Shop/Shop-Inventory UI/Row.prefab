@@ -599,6 +599,8 @@ MonoBehaviour:
   amount: 
   price: 
   url: 
+  _total: 0
+  _currentRow: {fileID: 6570948112006824}
 --- !u!114 &454944388590892242 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4173054105898140627, guid: 93e9041e54bc3174a8672dc569cdb372, type: 3}
