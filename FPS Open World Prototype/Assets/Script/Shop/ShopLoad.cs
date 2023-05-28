@@ -19,14 +19,27 @@ public class ShopLoad : MonoBehaviour
     [SerializeField]
     private double _purse = 5000000f;
 
+    [SerializeField]
+    private InventoryLoad _inventoryLoad;
+
     private static List<ItemRow> _itemList = new List<ItemRow>();
 
     // Start is called before the first frame update
     void Start()
     {
         _uIManager = GameObject.FindObjectOfType<UIManager>();
-        _purseText.text = "$" + PlayerPrefs.GetString("purse");
-        _purse = double.Parse(PlayerPrefs.GetString("purse"));
+        _inventoryLoad = GameObject.FindObjectOfType<InventoryLoad>();
+        if (PlayerPrefs.GetString("purse") != null)
+        {
+            _purseText.text = "$" + PlayerPrefs.GetString("purse");
+            _purse = double.Parse(PlayerPrefs.GetString("purse"));
+        }
+        else
+        {
+            _purse = 5000000f;
+            PlayerPrefs.SetString("purse", _purse.ToString());
+        }
+
         StartCoroutine(GetAllItems());
     }
 
@@ -36,10 +49,10 @@ public class ShopLoad : MonoBehaviour
         WWWForm getAllItemsForm = new WWWForm();
         UnityWebRequest getAllItemsRequest = UnityWebRequest.Post("http://localhost/shop/getall.php", getAllItemsForm);
         yield return getAllItemsRequest.SendWebRequest();
-        if(getAllItemsRequest.error == null)
+        if (getAllItemsRequest.error == null)
         {
             JSONNode allItems = JSON.Parse(getAllItemsRequest.downloadHandler.text);
-            foreach(JSONNode item in allItems)
+            foreach (JSONNode item in allItems)
             {
                 var shopItem = Instantiate(_itemPrefab, new Vector3(), Quaternion.identity);
                 shopItem.transform.SetParent(_content.transform);
@@ -69,11 +82,12 @@ public class ShopLoad : MonoBehaviour
         if (_purse >= _totalPrice)
         {
             //
-            foreach(ItemRow item in _itemList)
+            foreach (ItemRow item in _itemList)
             {
                 item.InsertItemToInventory(item.id, item.itemName, int.Parse(item.price), item.url);
                 item.ReduceAmountAfterBuy();
             }
+            _inventoryLoad.UpdateInventory();
             _purse -= _totalPrice;
             _totalPrice = 0;
             _uIManager.UpdateTotalMoney(_totalPrice);
