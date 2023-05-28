@@ -63,4 +63,17 @@ public class SceneLoader : MonoBehaviour
         StartCoroutine(LoadSelectLevel(levelName));
     }
 
+    public void LoadInventory()
+    {
+        StartCoroutine(LoadSelectLevel("Shop"));
+        DontDestroyOnLoad(gameObject);
+        Invoke("ultil", 1.75f);
+    }
+
+    private void ultil()
+    {
+        GameObject.Find("Canvas").GetComponent<Animator>().SetTrigger("OpenInventory");
+        Destroy(gameObject);
+        //GetComponent<Animator>().SetTrigger("");
+    }
 }
