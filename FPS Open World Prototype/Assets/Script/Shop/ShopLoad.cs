@@ -19,8 +19,11 @@ public class ShopLoad : MonoBehaviour
     [SerializeField]
     private double _purse = 5000000f;
 
+    public GameObject _notification;
+
     [SerializeField]
     private InventoryLoad _inventoryLoad;
+
 
     private static List<ItemRow> _itemList = new List<ItemRow>();
 
@@ -94,6 +97,17 @@ public class ShopLoad : MonoBehaviour
             _purseText.text = "$" + _purse;
             PlayerPrefs.SetString("purse", _purse.ToString());
         }
+        else
+        {
+            StartCoroutine(StartNotification());
+        }
+    }
+
+    IEnumerator StartNotification()
+    {
+        _notification.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        _notification.SetActive(false);
     }
 
 }

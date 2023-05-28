@@ -14,6 +14,15 @@ public class InventorySlot : MonoBehaviour
     private Image _thisRenderer;
     [SerializeField]
     public TMP_Text _amountText;
+
+    private CustomCharacter _customCharacter;
+
+    private void Start()
+    {
+        _customCharacter = FindObjectOfType<CustomCharacter>();
+        GetComponent<Button>().onClick.AddListener(Clicked);
+    }
+
     public void AssignValue()
     {
         _amountText.text = "x" + amount;
@@ -25,5 +34,10 @@ public class InventorySlot : MonoBehaviour
         WWW wwwLoader = new WWW(url);
         yield return wwwLoader;
         _thisRenderer.sprite = Sprite.Create(wwwLoader.texture, new Rect(0, 0, wwwLoader.texture.width, wwwLoader.texture.height), Vector2.one / 2);
+    }
+
+    public void Clicked()
+    {
+        _customCharacter.CustomCharacterWithWeapon(url);
     }
 }
