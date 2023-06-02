@@ -9,7 +9,7 @@ public class LoadPrefs : MonoBehaviour
 {
     [Header("General Setting")]
     [SerializeField] private bool _canUse = false;
-    [SerializeField] private MenuController _menuController;
+    //[SerializeField] private MenuController _menuController;
 
     [Header("Volume Setting")]
     [SerializeField] private AudioMixer _audioMixer;
@@ -33,8 +33,11 @@ public class LoadPrefs : MonoBehaviour
     [Header("Invert Y Setting")]
     [SerializeField] private Toggle _invertToggle = null;
 
+    private MenuController _menuController;
+
     private void Awake()
     {
+        _menuController = MenuController.Instance;
         if (_canUse)
         {
             if (PlayerPrefs.HasKey("masterVolume"))
