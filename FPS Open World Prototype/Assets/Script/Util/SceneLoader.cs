@@ -9,7 +9,32 @@ public class SceneLoader : MonoBehaviour
     private Animator _Scenetransition = null;
 
     public float _transitionTime = 1f;
+    private static SceneLoader _instance;
 
+    public static SceneLoader Instance
+    {
+        get { return _instance; }
+    }
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (_instance == this)
+        {
+            _instance = null;
+        }
+    }
     private void Update()
     {
         if (SceneManager.GetActiveScene().name == "Lobby" && Input.GetKeyDown(KeyCode.Escape))
