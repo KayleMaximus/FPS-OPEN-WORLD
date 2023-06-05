@@ -34,11 +34,11 @@ public class ShotgunAmmo : AmmoType
             string ammoType = "ShotgunBullet(Clone)";
             if (gameObject.name == ammoType)
             {
-                IncreaseCurrentAmmo(15);
-                weapon._ammoText.SetText(_ammoAmount.ToString());
-                Debug.Log("Dan da tangggggggggggggggggggggggggggggggggggggggggggggg");
+                //IncreaseCurrentAmmo(15);
+                //weapon._ammoText.SetText(_ammoAmount.ToString());
                 Destroy(gameObject);
             }
+                Debug.Log("Dan da tangggggggggggggggggggggggggggggggggggggggggggggg");
         }
     }
 

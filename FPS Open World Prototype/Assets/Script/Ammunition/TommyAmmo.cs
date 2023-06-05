@@ -34,11 +34,11 @@ public class TommyAmmo : AmmoType
             string ammoType = "TommyBullet(Clone)";
             if (gameObject.name == ammoType)
             {
-                IncreaseCurrentAmmo(15);
-                weapon._ammoText.SetText(_ammoAmount.ToString());
-                Debug.Log("Dan da tangggggggggggggggggggggggggggggggggggggggggggggg");
+                //IncreaseCurrentAmmo(15);
+                //weapon._ammoText.SetText(_ammoAmount.ToString());
                 Destroy(gameObject);
             }
+                Debug.Log("Dan da tangggggggggggggggggggggggggggggggggggggggggggggg");
         }
     }
 

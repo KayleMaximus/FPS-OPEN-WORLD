@@ -32,7 +32,7 @@ public class SniperAmmo : AmmoType
             string ammoType = "SniperBullet(Clone)";
             if (gameObject.name == ammoType)
             {
-                IncreaseCurrentAmmo(15);
+                //IncreaseCurrentAmmo(15);
                 Debug.Log("Dan da tangggggggggggggggggggggggggggggggggggggggggggggg");
                 Destroy(gameObject);
             }            

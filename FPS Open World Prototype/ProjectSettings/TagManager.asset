@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - CurrentPlayer
+  - Zombie
+  - Titan
+  - Scope
   layers:
   - Default
   - TransparentFX

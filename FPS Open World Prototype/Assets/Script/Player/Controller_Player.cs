@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Controller_Player : MonoBehaviour
@@ -10,6 +11,9 @@ public class Controller_Player : MonoBehaviour
     public float limt_look_x=180f;
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
+
+
+
 
     void Start()
     {
@@ -66,5 +70,33 @@ public class Controller_Player : MonoBehaviour
         {
             moveDirection.y = jumpSpeed;
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Scope")
+        {
+            Debug.Log("Collided");
+            Destroy(other.gameObject);
+            /*GameObject.Find("Carbine").GetComponent<Transform>().transform.AddComponent<ScopeDecorator>();*/
+
+            /*AWeapon weapon = new Weapon();
+            ScopeDecorator scopeWeapon = new ScopeDecorator(weapon, Camera.main);
+            scopeWeapon.Shoot();*/
+
+            // T?o m?t GameObject ?? ??i di?n cho súng
+            GameObject gunObject = new GameObject("AWeapon");
+
+            // Thêm component súng c? b?n
+            AWeapon basicGun = gunObject.AddComponent<Weapon>();
+
+            // Thêm component decorator cho súng nh?m
+            ScopeDecorator scopedGun = gunObject.AddComponent<ScopeDecorator>();
+            scopedGun.Initialize(basicGun, Camera.current);
+
+            // B?n s? d?ng súng ?ã ???c nh?m
+            scopedGun.Shoot();
+        }
+
     }
 }
