@@ -7,21 +7,37 @@ public class SniperAmmo : AmmoType
 {
     private void Start()
     {
-        this._ammoAmount = 10; 
+        _ammoAmount = 30;
+    }
+
+    protected internal override int GetCurrentAmmo()
+    {
+        return this._ammoAmount;
+    }
+
+    protected internal override void ReduceCurrentAmmo()
+    {
+        _ammoAmount--;
+    }
+
+    protected internal override void IncreaseCurrentAmmo(int ammountPickups)
+    {
+        _ammoAmount += ammountPickups;
     }
 
     protected override void OnTriggerEnter(Collider other)
     {
-
         if (other.gameObject.tag == "Player")
         {
-            
-            FindObjectOfType<Ammo>().IncreaseCurrentAmmo(this, 5);
-
-            Debug.Log("jfkjhgkdgfjgf");
-            Destroy(gameObject);
+            string ammoType = "SniperBullet(Clone)";
+            if (gameObject.name == ammoType)
+            {
+                IncreaseCurrentAmmo(15);
+                Debug.Log("Dan da tangggggggggggggggggggggggggggggggggggggggggggggg");
+                Destroy(gameObject);
+            }            
         }
     }
 
-    
+
 }

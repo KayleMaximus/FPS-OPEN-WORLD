@@ -9,7 +9,6 @@ public class EnemyHealth : MonoBehaviour
     Animator _animator;
     bool _isdead = false;
 
-    [SerializeField] GameObject _ammo;
 
     public bool IsDead()
     {

@@ -161,7 +161,6 @@ GameObject:
   - component: {fileID: 6315439360438749762}
   - component: {fileID: 635792064}
   - component: {fileID: 635792065}
-  - component: {fileID: 1134233063}
   - component: {fileID: 7628514733627878670}
   m_Layer: 0
   m_Name: Player
@@ -311,25 +310,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameOverCanvas: {fileID: 0}
---- !u!114 &1134233063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6315439360438749761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c3c5c5326dfc804aa8fdcac770985b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  __ammoSlots:
-  - ammoType: 2
-    ammoAmount: 100
-  - ammoType: 1
-    ammoAmount: 30
-  - ammoType: 0
-    ammoAmount: 50
 --- !u!114 &7628514733627878670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -477,7 +457,7 @@ PrefabInstance:
     - target: {fileID: 1860890943, guid: 96259d979da28fd47a7e1990ab56d18a, type: 3}
       propertyPath: _ammoSlot
       value: 
-      objectReference: {fileID: 1134233063}
+      objectReference: {fileID: 0}
     - target: {fileID: 2337074158996965286, guid: 96259d979da28fd47a7e1990ab56d18a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -547,7 +527,7 @@ PrefabInstance:
     - target: {fileID: 1860890943, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
       propertyPath: _ammoSlot
       value: 
-      objectReference: {fileID: 1134233063}
+      objectReference: {fileID: 0}
     - target: {fileID: 1860890943, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
       propertyPath: _hitEffect
       value: 
@@ -691,7 +671,7 @@ PrefabInstance:
     - target: {fileID: 1860890943, guid: fbc3d1daa952b6a42a31bde45a368790, type: 3}
       propertyPath: _ammoSlot
       value: 
-      objectReference: {fileID: 1134233063}
+      objectReference: {fileID: 0}
     - target: {fileID: 1860890943, guid: fbc3d1daa952b6a42a31bde45a368790, type: 3}
       propertyPath: _muzzleFlash
       value: 

@@ -78,11 +78,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3090580297782705793, guid: 1b7a645483b6c1247882cc5966d74787, type: 3}
       propertyPath: m_Name
-      value: Shell Pickup
+      value: TommyBullet
       objectReference: {fileID: 0}
     - target: {fileID: 7693471294015080804, guid: 1b7a645483b6c1247882cc5966d74787, type: 3}
       propertyPath: _ammoType
-      value: 1
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7843124283229468309, guid: 1b7a645483b6c1247882cc5966d74787, type: 3}
       propertyPath: m_RootOrder
@@ -140,8 +140,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7693471294015080804, guid: 1b7a645483b6c1247882cc5966d74787, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b7a645483b6c1247882cc5966d74787, type: 3}
+--- !u!1 &152834995207376384 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3090580297782705793, guid: 1b7a645483b6c1247882cc5966d74787, type: 3}
+  m_PrefabInstance: {fileID: 2953526799146758273}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-4639308555015707474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152834995207376384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3fd173c9877c704786d7803fd936e86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4910426637748454932 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7843124283229468309, guid: 1b7a645483b6c1247882cc5966d74787, type: 3}
