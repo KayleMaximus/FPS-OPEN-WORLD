@@ -14,7 +14,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] AmmoType _ammoType;
     [SerializeField] float _Cooldown = 0.5f;
     [SerializeField] bool _canShoot = true;
-    [SerializeField] TextMeshProUGUI _ammoText; 
+    //[SerializeField] TextMeshProUGUI _ammoText; 
 
     private void OnEnable()
     {
@@ -24,7 +24,7 @@ public class Weapon : MonoBehaviour
     void Update()
     {
         DisplayAmmo();
-        if (Input.GetMouseButtonDown(0) && _canShoot)
+        if (Input.GetMouseButtonDown(0) || _canShoot)
         {
             StartCoroutine(Shoot());
         }
@@ -32,18 +32,18 @@ public class Weapon : MonoBehaviour
 
     private void DisplayAmmo()
     {
-        _ammoText.SetText(_ammoSlot.GetCurrentAmmo(_ammoType).ToString());
+        //_ammoText.SetText(_ammoSlot.GetCurrentAmmo(_ammoType).ToString());
     }
 
     IEnumerator Shoot()
     {
         _canShoot = false;
-        if (_ammoSlot.GetCurrentAmmo(_ammoType) > 0)
+        /*if (_ammoSlot.GetCurrentAmmo(_ammoType) > 0)
         {
+            _ammoSlot.ReduceCurrentAmmo(_ammoType);
+        }*/
             PlayMuzzleFlash();
             ProcessRaycast();
-            _ammoSlot.ReduceCurrentAmmo(_ammoType);
-        }
         yield return new WaitForSeconds(_Cooldown);
         _canShoot = true;
 

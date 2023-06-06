@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3225147997589944261}
   - component: {fileID: 1378777881434945316}
   - component: {fileID: 3125138482090505557}
+  - component: {fileID: -97188536949821565}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Zombie
@@ -151,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hitPoints: 100
+  _ammo: {fileID: 0}
 --- !u!114 &1378777881434945316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,6 +183,18 @@ MonoBehaviour:
   _distanceToTarget: Infinity
   _isProvoked: 0
   _isAttack: 0
+--- !u!114 &-97188536949821565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2292672369677778367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 617968962cb13ef41a5e9e4a313e31c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5252332410351909805
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ public class DeathHandler : MonoBehaviour
     private void Start()
     {
         _gameOverCanvas.enabled=false;
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -17,8 +17,10 @@ public class DeathHandler : MonoBehaviour
     public void HandleDeath()
     {
         _gameOverCanvas.enabled = true;
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         FindObjectOfType<WeaponSwitcher>().enabled = false;
+        FindObjectOfType<Controller_Player>().enabled = false;
+        FindObjectOfType<Weapon>().enabled = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }

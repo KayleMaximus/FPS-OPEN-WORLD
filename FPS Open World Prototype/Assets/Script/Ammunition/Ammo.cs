@@ -6,39 +6,26 @@ public class Ammo : MonoBehaviour
 {
     //[SerializeField] int ammoAmount = 20;
 
-    [SerializeField] AmmoSlot[] __ammoSlots;
-
-    [System.Serializable]
-    private class AmmoSlot
+    public int GetCurrentAmmo<Unknown>(Unknown ammoType) where Unknown : AmmoType
     {
-        public AmmoType ammoType;
-        public int ammoAmount;
+        return ammoType._ammoAmount;
     }
 
-    public int GetCurrentAmmo(AmmoType ammoType)
+    public void ReduceCurrentAmmo<Unknown>(Unknown ammoType) where Unknown: AmmoType
     {
-        return GetAmmoSlot(ammoType).ammoAmount;
+        ammoType._ammoAmount--;
     }
 
-    public void ReduceCurrentAmmo(AmmoType ammoType)
+    public void IncreaseCurrentAmmo<Unknown>(Unknown ammoType, int ammoAmmount) where Unknown : AmmoType
     {
-        GetAmmoSlot(ammoType).ammoAmount--;
+        ammoType._ammoAmount += ammoAmmount;
     }
 
-    public void IncreaseCurrentAmmo(AmmoType ammoType, int ammoAmmount)
+    /*private AmmoType GetAmmoType<Unknown>(Unknown ammoType) where Unknown : AmmoType
     {
-        GetAmmoSlot(ammoType).ammoAmount += ammoAmmount;
-    }
-
-    private AmmoSlot GetAmmoSlot(AmmoType ammoType)
-    {
-        foreach(AmmoSlot slot in __ammoSlots)
+        if (ammoType != null)
         {
-            if(slot.ammoType == ammoType)
-            {
-                return slot;
-            }
-        }
-        return null;
-    }
+            return ammoType;
+        } else return null;
+    }*/
 }
