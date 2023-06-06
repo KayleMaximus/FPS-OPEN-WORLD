@@ -1,9 +1,7 @@
 
-using UnityEngine;
-
-public abstract class AmmoType : MonoBehaviour
+public enum AmmoType
 {
-    protected internal string _ammoName;
-    protected internal int _ammoAmount;
-    protected abstract void OnTriggerEnter(Collider other);
+    Bullet,
+    Shells,
+    Rockets
 }
