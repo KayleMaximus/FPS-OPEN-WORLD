@@ -67,4 +67,41 @@ public class Controller_Player : MonoBehaviour
             moveDirection.y = jumpSpeed;
         }
     }
+<<<<<<< Updated upstream
+=======
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Scope")
+        {
+            Debug.Log("Collided");
+            Destroy(other.gameObject);
+            /*GameObject.Find("Carbine").GetComponent<Transform>().transform.AddComponent<ScopeDecorator>();*/
+
+            /*AWeapon weapon = new Weapon();
+            ScopeDecorator scopeWeapon = new ScopeDecorator(weapon, Camera.main);
+            scopeWeapon.Shoot();*/
+
+            /*// T?o m?t GameObject ?? ??i di?n cho súng
+            GameObject gunObject = new GameObject("AWeapon");
+
+            // Thêm component súng c? b?n
+            AWeapon basicGun = gunObject.AddComponent<Weapon>();
+
+            // Thêm component decorator cho súng nh?m
+            ScopeDecorator scopedGun = gunObject.AddComponent<ScopeDecorator>();
+            scopedGun.Initialize(basicGun, Camera.main);
+
+            // B?n s? d?ng súng ?ã ???c nh?m
+            scopedGun.Shoot();*/
+
+            Weapon currentGun = GetComponent<Weapon>();
+
+            // T?o decorator cho súng và kh?i t?o nó v?i súng hi?n t?i và camera chính
+            ScopeDecorator scopedGun = GameObject.Find("Carbine").GetComponent<Transform>().transform.AddComponent<ScopeDecorator>();
+            scopedGun.Initialize(currentGun, Camera.main);
+        }
+
+    }
+>>>>>>> Stashed changes
 }
